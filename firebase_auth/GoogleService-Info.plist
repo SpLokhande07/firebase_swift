@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBzF71gP7FXrzu5Lsb9Pez1ev--uBkwaWA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>403497080135</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sp.firebase-auth</string>
+	<key>PROJECT_ID</key>
+	<string>learning-firebase-with-native</string>
+	<key>STORAGE_BUCKET</key>
+	<string>learning-firebase-with-native.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:403497080135:ios:a4e596d44f9dd3f0632862</string>
+</dict>
+</plist>
