@@ -19,7 +19,7 @@ struct firebase_authApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack{
-                AuthWithEmailView()
+                HomeScreenView()
         }
         }
     }

@@ -31,6 +31,11 @@ struct SignInWithEmailView: View {
                 .onTapGesture {
                     viewModel.signIn()
                 }
+            
+            HStack{
+               Text("Not a user? SignUp").foregroundStyle(Color.blue).padding(.top, 16)
+            }
+            
         
 //        Spacer()
             

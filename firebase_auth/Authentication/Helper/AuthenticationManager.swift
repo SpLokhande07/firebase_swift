@@ -12,12 +12,20 @@ struct AuthDataResultModel{
     let uid : String
     let email : String?
     let photoUrl : String?
-    
+    var errorMessage : String?
     init(user : User){
-        self.uid = user.uid
-        self.email = user.email
-        self.photoUrl = user.photoURL?.absoluteString
+            self.uid = user.uid
+            self.email = user.email
+            self.photoUrl = user.photoURL?.absoluteString
     }
+    
+    init(error: String){
+        self.uid = ""
+        self.email = ""
+        self.photoUrl = ""
+        self.errorMessage = error
+    }
+    
     
 }
 
@@ -25,13 +33,18 @@ struct AuthDataResultModel{
 
 final class AuthenticationManager {
     static let shared = AuthenticationManager()
+    
     private init(){}
     
-    func createUser(email:String, password: String) async throws -> AuthDataResultModel{
-        let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
+    func isUserSignedIn() -> Bool{
         
-        return AuthDataResultModel(user : authDataResult.user)
+        return Auth.auth().currentUser != nil
         
     }
     
+    func errorHandler(error : AuthErrorCode) -> AuthDataResultModel{
+        var model = AuthDataResultModel(error: "")
+        model.errorMessage = error.localizedDescription
+        return model
+    }
 }

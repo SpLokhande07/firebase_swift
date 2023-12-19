@@ -44,9 +44,9 @@
 		32D2CB0F2B2EFC7E005C4BE0 /* SignInWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2CB0E2B2EFC7E005C4BE0 /* SignInWithEmailView.swift */; };
 		32D2CB112B2EFEF8005C4BE0 /* SignUpWithEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2CB102B2EFEF8005C4BE0 /* SignUpWithEmail.swift */; };
 		32D2CB132B2EFF22005C4BE0 /* AuthWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2CB122B2EFF22005C4BE0 /* AuthWithEmailView.swift */; };
-		32D2CB162B2F167B005C4BE0 /* SignInWithEmailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2CB152B2F167B005C4BE0 /* SignInWithEmailController.swift */; };
 		32D2CB192B2F1728005C4BE0 /* SignInWithEmailBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2CB182B2F1728005C4BE0 /* SignInWithEmailBtn.swift */; };
 		32D2CB1C2B2F1826005C4BE0 /* SignInWithEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2CB1B2B2F1826005C4BE0 /* SignInWithEmailModel.swift */; };
+		50337EC82B31B7AC00874323 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50337EC72B31B7AC00874323 /* HomeScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,9 +61,9 @@
 		32D2CB0E2B2EFC7E005C4BE0 /* SignInWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithEmailView.swift; sourceTree = "<group>"; };
 		32D2CB102B2EFEF8005C4BE0 /* SignUpWithEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmail.swift; sourceTree = "<group>"; };
 		32D2CB122B2EFF22005C4BE0 /* AuthWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthWithEmailView.swift; sourceTree = "<group>"; };
-		32D2CB152B2F167B005C4BE0 /* SignInWithEmailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithEmailController.swift; sourceTree = "<group>"; };
 		32D2CB182B2F1728005C4BE0 /* SignInWithEmailBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithEmailBtn.swift; sourceTree = "<group>"; };
 		32D2CB1B2B2F1826005C4BE0 /* SignInWithEmailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithEmailModel.swift; sourceTree = "<group>"; };
+		50337EC72B31B7AC00874323 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +131,7 @@
 		32D2CABD2B2EE824005C4BE0 /* firebase_auth */ = {
 			isa = PBXGroup;
 			children = (
+				50337EC52B31B78B00874323 /* HomeScreen */,
 				32D2CB082B2EFB0C005C4BE0 /* Authentication */,
 				32D2CB052B2EF9A7005C4BE0 /* SignInWIthEmail */,
 				32D2CACC2B2EF10A005C4BE0 /* GoogleService-Info.plist */,
@@ -155,7 +156,6 @@
 			children = (
 				32D2CB1A2B2F1810005C4BE0 /* Model */,
 				32D2CB172B2F170B005C4BE0 /* Component */,
-				32D2CB142B2F1668005C4BE0 /* Controller */,
 				32D2CB0C2B2EFC5F005C4BE0 /* View */,
 			);
 			path = SignInWIthEmail;
@@ -188,14 +188,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		32D2CB142B2F1668005C4BE0 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				32D2CB152B2F167B005C4BE0 /* SignInWithEmailController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		32D2CB172B2F170B005C4BE0 /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +202,22 @@
 				32D2CB1B2B2F1826005C4BE0 /* SignInWithEmailModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		50337EC52B31B78B00874323 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				50337EC62B31B79200874323 /* View */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		50337EC62B31B79200874323 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50337EC72B31B7AC00874323 /* HomeScreenView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,9 +330,9 @@
 				32D2CB192B2F1728005C4BE0 /* SignInWithEmailBtn.swift in Sources */,
 				32D2CB132B2EFF22005C4BE0 /* AuthWithEmailView.swift in Sources */,
 				32D2CB0B2B2EFB3D005C4BE0 /* AuthenticationView.swift in Sources */,
+				50337EC82B31B7AC00874323 /* HomeScreenView.swift in Sources */,
 				32D2CB112B2EFEF8005C4BE0 /* SignUpWithEmail.swift in Sources */,
 				32D2CB1C2B2F1826005C4BE0 /* SignInWithEmailModel.swift in Sources */,
-				32D2CB162B2F167B005C4BE0 /* SignInWithEmailController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,9 @@ struct AuthenticationView: View {
             
             VStack{
                 AuthWithEmailView()
+                
+                
+                
             }
         }
     }

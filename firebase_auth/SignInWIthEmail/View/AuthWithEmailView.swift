@@ -9,11 +9,12 @@ import SwiftUI
 
 struct AuthWithEmailView: View {
     var body: some View {
-       NavigationStack{
+       NavigationView{
            VStack{
                NavigationLink(destination: SignInWithEmailView()){
                    SignInWithEmailBtn(title: "Sign in With Email").padding(8)
                }
+              
                 Spacer()
                 }
        }.navigationTitle("Authentication")
