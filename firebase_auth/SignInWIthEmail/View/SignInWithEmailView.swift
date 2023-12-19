@@ -10,6 +10,8 @@ import SwiftUI
 
 
 struct SignInWithEmailView: View {
+    
+    
     @StateObject private var viewModel = SignInWithEmailModel()
     var body: some View {
         
@@ -33,7 +35,9 @@ struct SignInWithEmailView: View {
                 }
             
             HStack{
-               Text("Not a user? SignUp").foregroundStyle(Color.blue).padding(.top, 16)
+                NavigationLink(destination:SignUpWithEmail()){
+                   Text("Not a user? SignUp").foregroundStyle(Color.blue).padding(.top, 16)
+               }
             }
             
         
