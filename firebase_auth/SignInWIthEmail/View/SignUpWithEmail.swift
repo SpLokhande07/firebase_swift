@@ -9,9 +9,10 @@ import SwiftUI
 
 struct SignUpWithEmail: View {
     
-    @Environment(\.presentationMode) var presentation
-    
     @StateObject private var viewModel = SignInWithEmailModel()
+    
+    @Binding var showSignInView : Bool
+    
     var body: some View {
         NavigationStack{
             VStack{
@@ -29,19 +30,31 @@ struct SignUpWithEmail: View {
                 
                 SignInWithEmailBtn(title: "Sign Up")
                     .onTapGesture {
-                        viewModel.signUp()
+                        Task{
+                            do{
+                                
+                                try await viewModel.signUp()
+                            }
+                            
+                            catch{
+                                print("\(error)")
+                            }
+                        }
+                      
                     }
                 
                 Text("Already a User? SignIn").foregroundStyle(Color.blue).padding(.top, 16)
                  .onTapGesture {
-                     presentation.wrappedValue.dismiss()
+                     withAnimation(Animation.easeInOut(duration: 2), {
+                         showSignInView.toggle()
+                     })
                  }
                 
-            }.padding()
-        }.navigationTitle("Sign Up")
+            }
+        }
     }
 }
 
 #Preview {
-        SignUpWithEmail()
+    SignUpWithEmail(showSignInView: .constant(false))
 }

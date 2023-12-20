@@ -17,8 +17,7 @@ struct SignInWithEmailBtn: View {
             Text("\(title)")
                 .font(.headline)
                 .foregroundStyle(.white)
-                .frame(  maxWidth : .infinity, minHeight: 50)
-            
+                .frame(maxWidth : .infinity, minHeight: 50)
                 .background(Color.blue)
                 .cornerRadius(10)
        

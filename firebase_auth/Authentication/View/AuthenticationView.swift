@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct AuthenticationView: View {
+    @Binding var isSignedIn : Bool
     var body: some View {
         NavigationStack{
             
             VStack{
-                AuthWithEmailView()
-                
-                
+                AuthWithEmailView(isSignedIn: $isSignedIn)
                 
             }
         }
@@ -23,6 +22,6 @@ struct AuthenticationView: View {
 
 #Preview {
 //    NavigationStack{
-    AuthenticationView()
+    AuthenticationView(isSignedIn: .constant(true))
 //}
 }

@@ -14,58 +14,60 @@ class SignInWithEmailModel : ObservableObject{
     @Published var email = ""
     @Published var password = ""
     
-    func signIn(){
+    func signIn() async throws{
         guard !email.isEmpty, !password.isEmpty else{
             print ("No Email or password found")
             return
         }
         
-        Task {
-            do{
-                let returnedUserData = try await signInUserUsingEmailAndPassword(email: email, password: password)
-                print("Success")
-                print(returnedUserData)
+//        Task {
+//            do{
+//                let returnedUserData = 
+        try await signInUserUsingEmailAndPassword(email: email, password: password)
+//                print("Success")
+//                print(returnedUserData)
                 
-            }
-            catch{
-                print("Error: \(error)")
-            }
-        }
+//            }
+//            catch{
+//                print("Error: \(error)")
+//            }
+//        }
         
     }
     
     
-    func signUp(){
+    func signUp() async throws{
         guard !email.isEmpty, !password.isEmpty else{
             print ("No Email or password found")
             return
         }
         
-        Task {
-            do{
-                let returnedUserData = try await createUserUsingEmailAndPassword(email: email, password: password)
+//        Task {
+//            do{
+//                let returnedUserData = 
+                try await createUserUsingEmailAndPassword(email: email, password: password)
                 print("Success")
-                print(returnedUserData)
-                
-            }
-            catch{
-                print("Error: \(error)")
-            }
-        }
+//                print(returnedUserData)
+//                
+//            }
+//            catch{
+//                print("Error: \(error)")
+//            }
+//        }
         
     }
     
     
     
     
-    
+    @discardableResult
     func createUserUsingEmailAndPassword(email:String, password: String) async throws -> AuthDataResultModel{
         let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
         return AuthDataResultModel(user : authDataResult.user)
         
     }
     
-    
+    @discardableResult
     func signInUserUsingEmailAndPassword(email:String, password: String) async throws -> AuthDataResultModel{
         let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
         return AuthDataResultModel(user: authDataResult.user)

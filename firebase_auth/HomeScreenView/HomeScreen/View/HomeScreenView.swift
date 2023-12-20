@@ -10,16 +10,17 @@ import SwiftUI
 struct HomeScreenView: View {
     @State private var isSignedIn: Bool = false
     var body: some View {
+  
         ZStack{
             NavigationStack{
-                Text("HomeScreen")
+              HomeView(isSignIn: $isSignedIn)
             }
         }.onAppear{
            isSignedIn = AuthenticationManager.shared.isUserSignedIn()
         }
         .fullScreenCover(isPresented: $isSignedIn, content: {
             NavigationStack{
-                AuthenticationView()
+                AuthenticationView(isSignedIn: $isSignedIn)
             }
         })
     }

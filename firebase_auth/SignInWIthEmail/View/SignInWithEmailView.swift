@@ -13,6 +13,10 @@ struct SignInWithEmailView: View {
     
     
     @StateObject private var viewModel = SignInWithEmailModel()
+ 
+    @Binding var showSignInView : Bool
+    @Binding var isSignIn : Bool
+    
     var body: some View {
         
     NavigationStack{  
@@ -30,26 +34,37 @@ struct SignInWithEmailView: View {
                 ) .cornerRadius(10)
             
             SignInWithEmailBtn(title: "Sign In")
-                .onTapGesture {
-                    viewModel.signIn()
+                .onTapGesture (){
+                    Task{
+                    
+                        do {
+                            try await viewModel.signIn()
+                        }catch{
+                            print("\(error)")
+                        }
+                    }
                 }
             
             HStack{
-                NavigationLink(destination:SignUpWithEmail()){
-                   Text("Not a user? SignUp").foregroundStyle(Color.blue).padding(.top, 16)
-               }
+//                NavigationLink(destination:SignUpWithEmail()){
+                    Text("Not a user? SignUp").foregroundStyle(Color.blue).padding(.top, 16).onTapGesture {
+                        withAnimation(Animation.easeInOut(duration: 2), {
+                            showSignInView.toggle()
+                        })
+                    }
+//               }
             }
             
         
 //        Spacer()
             
-        }.padding()
-        .navigationTitle("Sign in with Email")
+        }
+        
     }}
     
 }
 
 #Preview {
     NavigationStack{
-    SignInWithEmailView()}
+        SignInWithEmailView(showSignInView: .constant(true),isSignIn: .constant(true))}
 }

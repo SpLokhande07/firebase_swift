@@ -46,6 +46,7 @@
 		32D2CB132B2EFF22005C4BE0 /* AuthWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2CB122B2EFF22005C4BE0 /* AuthWithEmailView.swift */; };
 		32D2CB192B2F1728005C4BE0 /* SignInWithEmailBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2CB182B2F1728005C4BE0 /* SignInWithEmailBtn.swift */; };
 		32D2CB1C2B2F1826005C4BE0 /* SignInWithEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2CB1B2B2F1826005C4BE0 /* SignInWithEmailModel.swift */; };
+		32D981DA2B32784300744B9C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D981D92B32784300744B9C /* HomeView.swift */; };
 		50337EC82B31B7AC00874323 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50337EC72B31B7AC00874323 /* HomeScreenView.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		32D2CB122B2EFF22005C4BE0 /* AuthWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthWithEmailView.swift; sourceTree = "<group>"; };
 		32D2CB182B2F1728005C4BE0 /* SignInWithEmailBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithEmailBtn.swift; sourceTree = "<group>"; };
 		32D2CB1B2B2F1826005C4BE0 /* SignInWithEmailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithEmailModel.swift; sourceTree = "<group>"; };
+		32D981D92B32784300744B9C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		50337EC72B31B7AC00874323 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,7 +133,7 @@
 		32D2CABD2B2EE824005C4BE0 /* firebase_auth */ = {
 			isa = PBXGroup;
 			children = (
-				50337EC52B31B78B00874323 /* HomeScreen */,
+				50337EC52B31B78B00874323 /* HomeScreenView */,
 				32D2CB082B2EFB0C005C4BE0 /* Authentication */,
 				32D2CB052B2EF9A7005C4BE0 /* SignInWIthEmail */,
 				32D2CACC2B2EF10A005C4BE0 /* GoogleService-Info.plist */,
@@ -204,12 +206,37 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		50337EC52B31B78B00874323 /* HomeScreen */ = {
+		32D981D72B32780900744B9C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				32D981D82B32781000744B9C /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		32D981D82B32781000744B9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				32D981D92B32784300744B9C /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		32D981DB2B327A1300744B9C /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
 				50337EC62B31B79200874323 /* View */,
 			);
 			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		50337EC52B31B78B00874323 /* HomeScreenView */ = {
+			isa = PBXGroup;
+			children = (
+				32D981DB2B327A1300744B9C /* HomeScreen */,
+				32D981D72B32780900744B9C /* Settings */,
+			);
+			path = HomeScreenView;
 			sourceTree = "<group>";
 		};
 		50337EC62B31B79200874323 /* View */ = {
@@ -328,6 +355,7 @@
 				32D2CABF2B2EE824005C4BE0 /* firebase_authApp.swift in Sources */,
 				32443FB92B30639F008337E9 /* AuthenticationManager.swift in Sources */,
 				32D2CB192B2F1728005C4BE0 /* SignInWithEmailBtn.swift in Sources */,
+				32D981DA2B32784300744B9C /* HomeView.swift in Sources */,
 				32D2CB132B2EFF22005C4BE0 /* AuthWithEmailView.swift in Sources */,
 				32D2CB0B2B2EFB3D005C4BE0 /* AuthenticationView.swift in Sources */,
 				50337EC82B31B7AC00874323 /* HomeScreenView.swift in Sources */,
