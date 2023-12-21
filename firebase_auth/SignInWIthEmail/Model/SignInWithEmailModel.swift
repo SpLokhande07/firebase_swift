@@ -34,7 +34,6 @@ class SignInWithEmailModel : ObservableObject{
         
     }
     
-    
     func signUp(){
         guard !email.isEmpty, !password.isEmpty else{
             print ("No Email or password found")
@@ -54,10 +53,6 @@ class SignInWithEmailModel : ObservableObject{
         }
         
     }
-    
-    
-    
-    
     
     func createUserUsingEmailAndPassword(email:String, password: String) async throws -> AuthDataResultModel{
         let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
