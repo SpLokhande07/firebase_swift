@@ -17,7 +17,7 @@ struct HomeView: View {
                 
                 Task{
                     do{
-                        try SignInWithEmailModel().signOut()
+                        try AuthenticationManager.shared.signOut()
                     isSignIn = false
                     }catch{
                         print("Error while signing out \(error)")

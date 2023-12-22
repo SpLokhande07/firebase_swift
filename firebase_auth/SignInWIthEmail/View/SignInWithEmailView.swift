@@ -48,7 +48,7 @@ struct SignInWithEmailView: View {
             HStack{
 //                NavigationLink(destination:SignUpWithEmail()){
                     Text("Not a user? SignUp").foregroundStyle(Color.blue).padding(.top, 16).onTapGesture {
-                        withAnimation(Animation.easeInOut(duration: 2), {
+                        withAnimation(Animation.easeInOut(duration: 1), {
                             showSignInView.toggle()
                         })
                     }

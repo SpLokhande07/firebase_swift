@@ -7,6 +7,9 @@
 
 import SwiftUI
 import Firebase
+import FirebaseAuth
+import GoogleSignIn
+
 
 @main
 struct firebase_authApp: App {
@@ -14,8 +17,8 @@ struct firebase_authApp: App {
     init(){
         FirebaseApp.configure()
         print("Configured Fireabse")
-
     }
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack{

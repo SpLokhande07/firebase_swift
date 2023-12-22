@@ -45,7 +45,7 @@ struct SignUpWithEmail: View {
                 
                 Text("Already a User? SignIn").foregroundStyle(Color.blue).padding(.top, 16)
                  .onTapGesture {
-                     withAnimation(Animation.easeInOut(duration: 2), {
+                     withAnimation(Animation.easeInOut(duration: 1), {
                          showSignInView.toggle()
                      })
                  }

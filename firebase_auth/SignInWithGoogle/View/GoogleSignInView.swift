@@ -6,13 +6,24 @@
 //
 
 import SwiftUI
+import GoogleSignInSwift
 
-struct GoogleSignIn: View {
+struct GoogleSignInView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+       
+            
+            
+            GoogleSignInButton(style: GoogleSignInButtonStyle.icon, action: {})
+                .clipShape(Circle())
+                .shadow(radius: 10)
+                .onTapGesture {
+                    
+                }
+        
+        
     }
 }
 
 #Preview {
-    GoogleSignIn()
+    GoogleSignInView()
 }

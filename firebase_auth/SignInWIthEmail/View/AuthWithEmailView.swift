@@ -25,7 +25,8 @@ struct AuthWithEmailView: View {
                if !showSignInView { SignUpWithEmail(showSignInView : $showSignInView)
                        .opacity(!showSignInView ? 1 : 0)
                }
-                Spacer()
+               
+
            }.padding()
        }.navigationTitle(showSignInView ?  "Sign In" : "Sign Up")
                

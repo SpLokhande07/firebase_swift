@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeScreenView: View {
     @State private var isSignedIn: Bool = false
+    
     var body: some View {
   
         ZStack{

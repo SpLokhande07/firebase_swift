@@ -36,15 +36,42 @@ final class AuthenticationManager {
     private init(){}
     
     func isUserSignedIn() -> Bool{
-        
         return Auth.auth().currentUser != nil
-        
     }
     
     func errorHandler(error : AuthErrorCode) -> AuthDataResultModel{
         var model = AuthDataResultModel(error: "")
         model.errorMessage = error.localizedDescription
         return model
+    }
+    
+    func signOut()throws{
+        guard Auth.auth().currentUser != nil else{
+            print ("No User Logged In")
+            return
+        }
+        do{
+            try Auth.auth().signOut()
+        }catch{
+            print("Error\(error)")
+        }
+    }
+}
+ 
+
+extension AuthenticationManager {
+    
+    @discardableResult
+    func createUserUsingEmailAndPassword(email:String, password: String) async throws -> AuthDataResultModel{
+        let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
+        return AuthDataResultModel(user : authDataResult.user)
+        
+    }
+    
+    @discardableResult
+    func signInUserUsingEmailAndPassword(email:String, password: String) async throws -> AuthDataResultModel{
+        let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
+        return AuthDataResultModel(user: authDataResult.user)
     }
     
 }

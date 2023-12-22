@@ -13,9 +13,9 @@ struct AuthenticationView: View {
         NavigationStack{
             
             VStack{
-                AuthWithEmailView(isSignedIn: $isSignedIn)
+                AuthWithEmailView(isSignedIn: $isSignedIn);    GoogleSignInView().padding(16)
                 
-            }
+            }.frame(height: 300)
         }
     }
 }
